@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum HTTPMethods: String {
+public enum HTTPMethods: String {
     /// http method GET is used to request a specified resource, it's only used to retrieve some data. GET is
     /// expected to be a safe operation, means it will not change state of any resource on server.
     case GET

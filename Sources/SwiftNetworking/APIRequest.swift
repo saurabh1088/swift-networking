@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol APIRequest {
+public protocol APIRequest {
     var baseURL: String { get }
     var path: String { get }
     var params: [String: Any]? { get }
