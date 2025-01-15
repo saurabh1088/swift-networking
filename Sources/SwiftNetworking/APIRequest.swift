@@ -28,7 +28,7 @@ extension APIRequest {
         
         if httpMethod == .GET {
             guard let queryParams = params as? [String: String] else {
-                fatalError("Error")
+                return urlComponents?.url
             }
             urlComponents?.queryItems = queryParams.map({ URLQueryItem(name: $0.key, value: $0.value) })
         }
