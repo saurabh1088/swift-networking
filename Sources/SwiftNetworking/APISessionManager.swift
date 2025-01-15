@@ -9,7 +9,7 @@ import Foundation
 
 @available(iOS 13.0.0, *)
 protocol APISessionManagerProtocol {
-    func loadData<T: Decodable>(with request: APIRequest) async throws -> T
+    func loadData<T: Decodable>(of type: T.Type, with request: APIRequest) async throws -> T
 }
 
 @available(iOS 13.0.0, *)
@@ -20,7 +20,7 @@ public class APISessionManager: APISessionManagerProtocol {
         self.session = session
     }
     
-    public func loadData<T: Decodable>(with request: APIRequest) async throws -> T {
+    public func loadData<T: Decodable>(of type: T.Type, with request: APIRequest) async throws -> T {
         let (data, response) = try await session.data(for: request.urlRequest)
         
         guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
