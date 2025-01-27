@@ -14,7 +14,7 @@ import Foundation
 ///
 /// - Note: This protocol requires iOS 13.0 or later due to the use of async/await syntax.
 @available(iOS 13.0.0, *)
-protocol APISessionManagerProtocol {
+public protocol APISessionManagerProtocol {
     
     /// Loads data from a network request and decodes it into a specified type.
     ///
